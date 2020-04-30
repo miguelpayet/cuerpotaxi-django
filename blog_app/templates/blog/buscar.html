@@ -1,0 +1,16 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12"><h1>{{ num_found }} resultados de búsqueda</h1>
+            <ul>
+                {% for doc in docs %}
+                    <li><a href="/{{ doc.handle }}">{{ doc.titulo }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12"><p>[tiempo]</p></div>
+    </div>
+{% endblock %}

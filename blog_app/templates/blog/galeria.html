@@ -1,0 +1,12 @@
+{% extends "blog/base.html" %}
+
+{% load staticfiles %}
+
+{% block content %}
+    <div class="row">
+        {% for foto in fotos %}
+            <img src="{{ foto.url }}"/>
+        {% endfor %}
+        <div class="col-md-12"><p class="fecha text-muted">[tiempo]</p></div>
+    </div>
+{% endblock %}
