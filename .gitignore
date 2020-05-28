@@ -1,0 +1,12 @@
+*/static/
+*.jpg
+*.png
+*.log
+.DS_Store
+.idea/
+.vscode/
+__pycache__/
+ga*.js
+settings.py
+*.sql
+

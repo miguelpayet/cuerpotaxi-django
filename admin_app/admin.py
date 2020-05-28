@@ -1,10 +1,19 @@
-from blog_app.models import Entry
-from blog_app.models import TagEntry
-from blog_app.models import Tipo
 from django.contrib import admin
 from django.forms import ModelChoiceField
 from django.forms import ModelForm
 from django.forms import RadioSelect
+
+from blog_app.models import Entry
+from blog_app.models import Tag
+from blog_app.models import TagEntry
+from blog_app.models import Tipo
+
+
+class TagAdmin(admin.ModelAdmin):
+    list_display = ('idtag', 'tag')
+
+
+admin.site.register(Tag, TagAdmin)
 
 
 class TipoAdmin(admin.ModelAdmin):
@@ -36,7 +45,7 @@ class EntryForm(ModelForm):
 
 class EntryAdmin(admin.ModelAdmin):
     form = EntryForm
-    list_display = ('identry', 'titulo', 'tags',)
+    list_display = ('identry', 'titulo', 'tipo', 'tags',)
     inlines = (TagInline,)
 
 

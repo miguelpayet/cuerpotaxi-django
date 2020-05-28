@@ -15,6 +15,7 @@ class Tag(models.Model):
         db_table = 'tag'
         managed = False
         verbose_name_plural = "tags"
+        ordering = ['tag']
 
 
 class TagEntry(models.Model):
